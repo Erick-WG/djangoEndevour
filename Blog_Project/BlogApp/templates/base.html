@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
+    <!-- for the meta data you can do the same as the block title's it's good practice for the seo -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -15,8 +17,25 @@
     </title>
   </head>
   <body>
+    <!-- The imported navbar from the bootstrap link v.4.4 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="{% url 'home' %}">BlogApp</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <div class = "container">
+      <br><br>
         {% block content %}
 
 
