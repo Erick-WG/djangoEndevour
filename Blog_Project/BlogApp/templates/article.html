@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>This is the Article view template</h2>
+    <h3>{{ post.title }}</h3>
+        <small>{{ post.author }}</small>
+        <br><br>
+        <hr>
+        {{ post.body}}
+        <br><br>
+
+    <button><a href="{% url 'home' %}">BACK</a></button>
+
+{% endblock %}
