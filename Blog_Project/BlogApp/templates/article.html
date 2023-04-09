@@ -1,6 +1,10 @@
 
 {% extends 'base.html' %}
 
+{% block title %}
+    {{ post.title}}
+{% endblock %}
+
 {% block content %}
     <h2>This is the Article view template</h2>
     <h3>{{ post.title }}</h3>
