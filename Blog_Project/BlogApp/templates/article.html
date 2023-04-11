@@ -8,12 +8,13 @@
 {% block content %}
     <h2>This is the Article view template</h2>
     <h3>{{ post.title }}</h3>
-        <small>{{ post.author }}</small>
+        <small>{{ post.author }} - {{ post.post_date }} - <a href="{% url 'update_post' post.pk %}">{Edit}</a> <a href="{% url 'update_post' post.pk %}">{Update}</a></small>
         <br><br>
         <hr>
         {{ post.body}}
         <br><br>
 
-    <button><a href="{% url 'home' %}">BACK</a></button>
+    <button class="btn btn-primary"><a href="{% url 'home' %}" style="color: aliceblue; text-decoration: none;">BACK</a></button>
+    <button class="btn btn-danger" ><a href="{% url 'delete_post' post.pk %}" style="color: aliceblue; text-decoration: none;">Delete</a></button>
 
 {% endblock %}

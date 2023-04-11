@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Delete Post</h1>
+
+<!-- here we need a form that accepts fields that are in the db, to do that we can have custom forms or django forms -->
+<h3 style="color: red;">{{ post.title }}</h3>
+
+<div class="form-group">
+
+<form method="post">
+    {% csrf_token %}
+    <!-- importing the django form with p tags -->
+    <h3 style="color: red;"><strong>Do you really want to DELETE this?!</strong></h3>
+
+
+    <!-- The delete button -->
+         <button class="btn btn-danger" style="color: aliceblue; text-decoration: none;">Delete</button>
+         <button class="btn btn-primary"><a href="{% url 'article' post.pk %}" style="color: aliceblue; text-decoration: none;">Cancel</a></button>
+
+</div>
+<!-- we don't need to close off the form tag after loading the django templates -->
+
+{% endblock %}
