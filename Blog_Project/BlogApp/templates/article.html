@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-    <h2>This is the Article view template</h2>
+
     <h3>{{ post.title }}</h3>
         <small>{{ post.author }} - {{ post.post_date }}
             {% if user.is_authenticated %}
@@ -16,10 +16,14 @@
             </small>
         <br><br>
         <hr>
-        {{ post.body}}
+        {{ post.body }}
         <br><br>
 
     <button class="btn btn-primary"><a href="{% url 'home' %}" style="color: aliceblue; text-decoration: none;">BACK</a></button>
-    <button class="btn btn-danger" ><a href="{% url 'delete_post' post.pk %}" style="color: aliceblue; text-decoration: none;">Delete</a></button>
+
+<!-- Only logged in users can delete posts. -->
+    {% if user.is_authenticated %}
+        <button class="btn btn-danger" ><a href="{% url 'delete_post' post.pk %}" style="color: aliceblue; text-decoration: none;">Delete</a></button>
+    {% endif %}
 
 {% endblock %}
