@@ -7,7 +7,7 @@
             {% for post in object_list %}
                 <li>
                   <a href="{% url 'article' post.pk %}" > {{post.title}} </a>
-                    - {{post.author}} - {{ post.post_date }} 
+                    - {{post.author}} - {{ post.post_date }}
                   <small>
 
 <!-- Users can only edit posts only when they are logged into the app. -->

@@ -7,6 +7,7 @@
 
 {% block content %}
 
+<div class="container">
     <h3>{{ post.title }}</h3>
         <small>{{ post.author }} - {{ post.post_date }}
             {% if user.is_authenticated %}
@@ -16,7 +17,17 @@
             </small>
         <br><br>
         <hr>
-        {{ post.body }}
+        <p class="lead">
+            <p class="mb-0">{{ post.body }}</p>
+            <br>
+
+            <footer class="blockquote-footer">{{ post.author }} in <cite title="Source Title">{{ post.title }}</cite></footer>
+        </p>
+
+        <!-- <div class="lead">
+            {{ post.body }}
+        </div> -->
+        
         <br><br>
 
     <button class="btn btn-primary"><a href="{% url 'home' %}" style="color: aliceblue; text-decoration: none;">BACK</a></button>
@@ -26,4 +37,5 @@
         <button class="btn btn-danger" ><a href="{% url 'delete_post' post.pk %}" style="color: aliceblue; text-decoration: none;">Delete</a></button>
     {% endif %}
 
+</div>
 {% endblock %}
