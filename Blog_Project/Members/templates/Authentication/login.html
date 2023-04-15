@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+
+<h1>Login</h1>
+
+<!-- here we need a form that accepts fields that are in the db, to do that we can have custom forms or django forms -->
+<div class="form-group">
+
+<form method="post">
+    {% csrf_token %}
+    <!-- importing the django form with p tags -->
+    {{ form.as_p }}
+
+    <!-- This is the Post Button -->
+    <button class="btn btn-primary">Login</button>
+
+
+
+</div>
+<!-- we don't need to close off the form tag after loading the django templates -->
+
+{% endblock %}
