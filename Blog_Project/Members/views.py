@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 
 class CreateUserForm(generic.CreateView):
     form_class = UserCreationForm
-    template_name = 'Authentication/create_user.html'
+    template_name = 'registration/create_user.html'
     success_url = reverse_lazy('login')
 
 

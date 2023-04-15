@@ -27,10 +27,24 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
 
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'add_post' %}}">Create</a>
-          </li>
-          
+          <!-- controlling user actions by authentication. -->
+
+          {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'add_post' %}">Create</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">logOut</a>
+              </li>
+          {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+              </li>
+          {% endif %}
+
         </ul>
       </div>
     </nav>

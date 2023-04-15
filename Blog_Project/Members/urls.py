@@ -3,5 +3,5 @@ from django.urls import path
 from .views import CreateUserForm
 
 urlpatterns = [
-    path('register/', CreateUserForm.as_view(), name="Register"),
+    path('register/', CreateUserForm.as_view(), name="register"),
 ]
